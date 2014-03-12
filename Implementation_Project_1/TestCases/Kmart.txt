@@ -1,0 +1,20 @@
+1	Toshiba Laptop, MicroSD Card, Mouse, USB Drive, LCD Monitor, Wireless Router
+2	LCD Monitor, Toshiba Laptop, GPS, USB Drive, MicroSD Card
+3	MicroSD Card, USB Drive, Camera, GPS
+4	Kindle Fire HD, Toshiba Laptop, Iphone 5s, MicroSD Card, Mouse, LCD Monitor
+5	Iphone 5s, Kindle Fire HD, GPS, Camera
+6	Wireless Router, Toshiba Laptop, MicroSD Card, LCD Monitor, Mouse
+7	GPS, Toshiba Laptop, MicroSD Card, Mouse, LCD Monitor
+8	Kindle Fire HD, Toshiba Laptop, LCD Monitor, Mouse, Wireless Router
+9	Iphone 5s, Toshiba Laptop, LCD Monitor, Mouse, GPS, Camera
+10	USB Drive, Iphone 5s, Camera, MicroSD Card, Mouse
+11	GPS, Iphone 5s, Kindle Fire HD, Camera, Wireless Router
+12	GPS, Toshiba Laptop, MicroSD Card, Mouse, LCD Monitor
+13	Toshiba Laptop, Iphone 5s, LCD Monitor, Mouse, GPS, Camera
+14	Camera, Iphone 5s, Kindle Fire HD, Wireless Router
+15	Iphone 5s, Kindle Fire HD, Camera, Wireless Router
+16	MicroSD Card, Toshiba Laptop, Mouse, LCD Monitor
+17	Toshiba Laptop, Mouse, LCD Monitor
+18	Iphone 5s, Kindle Fire HD, Camera, Wireless Router
+19	Toshiba Laptop, MicroSD Card, Mouse, LCD Monitor
+20	Iphone 5s, Kindle Fire HD, Camera, Wireless Router

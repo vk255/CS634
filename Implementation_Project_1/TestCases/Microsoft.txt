@@ -1,0 +1,20 @@
+1 	Xbox 360, Microsoft Surface Pro, Kinect, Xbox 360 Controller, Blender
+2 	Kindle Fire HD, Xbox 360, Microsoft Surface Pro, Kinect, Xbox 360 Controller
+3	LCD Monitor, Xbox 360, Microsoft Surface Pro, Kinect, Xbox 360 Controller, Blender, Mouse, Keyboard
+4	ATIV Book 9, LCD Monitor, Mouse, Keyboard, Microsoft Surface Pro
+5	Kindle Fire HD, LCD Monitor, Kinect, Microsoft Surface Pro, ATIV Book 9, Xbox 360
+6	Xbox 360, Microsoft Surface Pro, Kinect, Xbox 360 Controller 
+7	Kindle Fire HD, Blender, LCD Monitor, Mouse, Keyboard
+8	Xbox 360, Microsoft Surface Pro, Kinect, Xbox 360 Controller 
+9	Mouse, Keyboard, LCD Monitor, Xbox 360
+10	Xbox 360, Microsoft Surface Pro, Kinect, Xbox 360 Controller 
+11	Keyboard, LCD Monitor, Mouse, Blender, Kinect
+12	Xbox 360, Microsoft Surface Pro, Kinect, Xbox 360 Controller
+13	ATIV Book 9, LCD Monitor, Mouse, Keyboard
+14	Xbox 360, Microsoft Surface Pro, Kinect, Xbox 360 Controller
+15	LCD Monitor, Mouse, Keyboard
+16	Xbox 360, Microsoft Surface Pro, Kinect, Xbox 360 Controller 
+17	Xbox 360, Microsoft Surface Pro, Kinect, Xbox 360 Controller 
+18	Keyboard, Xbox 360, Microsoft Surface Pro, ATIV Book 9
+19	Xbox 360, Microsoft Surface Pro, Kinect, Xbox 360 Controller 
+20	LCD Monitor, Mouse, Keyboard

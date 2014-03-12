@@ -1,0 +1,20 @@
+1 	Samsung LED TV, Galaxy Nexus 4, Galaxy Nexus 7, ATIV Book 9, Blender
+2 	Kindle Fire HD, Galaxy Nexus 4, Samsung LED TV, Galaxy Nexus 7, ATIV Book 9
+3	LCD Monitor, Samsung LED TV, Galaxy Nexus 4, Galaxy Nexus 7, ATIV Book 9, Blender, Mouse, Keyboard
+4	ATIV Book 9, LCD Monitor, Mouse, Keyboard, Galaxy Nexus 7
+5	Kindle Fire HD, LCD Monitor, Galaxy Nexus 4, Galaxy Nexus 7, ATIV Book 9, Samsung LED TV
+6	Samsung LED TV, Kindle Fire HD, Galaxy Nexus 4, Galaxy Nexus 7, ATIV Book 9
+7	Kindle Fire HD, Blender, LCD Monitor, Mouse, Keyboard
+8	Samsung LED TV, Galaxy Nexus 7, ATIV Book 9, Galaxy Nexus 4
+9	Mouse, Keyboard, LCD Monitor, Samsung LED TV
+10	Samsung LED TV, Galaxy Nexus 4, Galaxy Nexus 7, ATIV Book 9
+11	Keyboard, LCD Monitor, Mouse, Blender, Galaxy Nexus 4
+12	Samsung LED TV, Galaxy Nexus 4, Galaxy Nexus 7
+13	ATIV Book 9, LCD Monitor, Mouse, Keyboard
+14	Samsung LED TV, Galaxy Nexus 4, Galaxy Nexus 7, ATIV Book 9
+15	LCD Monitor, Mouse, Keyboard
+16	Kindle Fire HD, Galaxy Nexus 7, Samsung LED TV, Galaxy Nexus 4, ATIV Book 9
+17	LCD Monitor, Samsung LED TV, Galaxy Nexus 4, Galaxy Nexus 7, ATIV Book 9
+18	Keyboard, Samsung LED TV, Galaxy Nexus 4, Galaxy Nexus 7, ATIV Book 9
+19	Keyboard, LCD Monitor, Mouse
+20	LCD Monitor, Mouse, Keyboard

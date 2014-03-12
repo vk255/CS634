@@ -1,0 +1,20 @@
+1	Printer, MicroSD Card, Paper, USB Drive, Cartridges, USB Cable
+2	Cartridges, Printer, GPS, USB Drive, MicroSD Card
+3	MicroSD Card, USB Drive, Camera, GPS
+4	Kindle Fire HD, Printer, Iphone 5s, MicroSD Card, Paper, Cartridges
+5	Iphone 5s, Kindle Fire HD, GPS, Camera
+6	USB Cable, Printer, MicroSD Card, Cartridges, Paper
+7	GPS, Printer, MicroSD Card, Paper, Cartridges
+8	Kindle Fire HD, Printer, Cartridges, Paper, USB Cable
+9	Iphone 5s, Printer, Cartridges, Paper, GPS, Camera
+10	USB Drive, Iphone 5s, Camera, MicroSD Card, Paper
+11	GPS, Iphone 5s, Kindle Fire HD, Camera, USB Cable
+12	GPS, Printer, MicroSD Card, Paper, Cartridges
+13	Printer, Iphone 5s, Cartridges, Paper, GPS, Camera
+14	Camera, Iphone 5s, Kindle Fire HD, USB Cable
+15	Iphone 5s, Kindle Fire HD, Camera, USB Cable
+16	MicroSD Card, Printer, Paper, Cartridges
+17	Printer, Paper, Cartridges
+18	Iphone 5s, Kindle Fire HD, Camera, USB Cable
+19	Printer, MicroSD Card, Paper, Cartridges
+20	Iphone 5s, Kindle Fire HD, Camera, USB Cable
