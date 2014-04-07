@@ -1,0 +1,21 @@
+It is 3D
+0.0 3.46 4.47 7.68 19.51 18.43 89.23 4.12 17.52 29.27 
+3.46 0.0 2.82 9.11 21.09 20.19 91.29 1.0 19.05 31.12 
+4.47 2.82 0.0 9.11 19.0 20.0 89.27 2.23 17.05 31.0 
+7.68 9.11 9.11 0.0 21.95 11.09 90.02 9.05 20.59 22.04 
+19.51 21.09 19.0 21.95 0.0 27.58 70.34 21.02 2.44 36.35 
+18.43 20.19 20.0 11.09 27.58 0.0 89.94 20.12 27.03 11.0 
+89.23 91.29 89.27 90.02 70.34 89.94 0.0 91.27 72.44 92.17 
+4.12 1.0 2.23 9.05 21.02 20.12 91.27 0.0 19.02 31.08 
+17.52 19.05 17.05 20.59 2.44 27.03 72.44 19.02 0.0 36.24 
+29.27 31.12 31.0 22.04 36.35 11.0 92.17 31.08 36.24 0.0 
+false false false false false false false false false false 
+false false false false false false false true false false 
+false false false false false false false false false false 
+false false false false false false false false false false 
+false false false false false false false false false false 
+false false false false false false false false false false 
+false false false false false false false false false false 
+false false false false false false false false false false 
+false false false false false false false false false false 
+false false false false false false false false false false 

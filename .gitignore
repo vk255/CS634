@@ -1,2 +1,4 @@
 *.class
 *.doc
+*.swp
+*.DS_Store
