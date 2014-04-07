@@ -113,7 +113,15 @@ class Cluster {
 
 		return new Cluster(array);
 	}
-
+	public boolean checkIfNodeExists(int index){
+		
+		for(Node n: list){
+			if(n.getIndex() == index)
+				return true;
+		}
+		
+		return false;
+	}
 	public int getSize(){ return list.length; } 
 	
 	public String toString() {
@@ -180,8 +188,8 @@ public class Agglomerative {
 		return distances;
 
 	}
-
-	public static void getShortestDistance
+	
+	public static int[] getShortestDistance
 			   (double[][] distances, 
 			   boolean[][] isMarked){
 		
@@ -205,6 +213,10 @@ public class Agglomerative {
 		}
 
 		isMarked[row][column] = true;
+		
+		int[] arr = { row, column };
+		
+		return arr;
 	
 	}
 
@@ -276,8 +288,54 @@ public class Agglomerative {
 				double[][] initialDistances = getDistances(3, startArray);
 				
 				printDistance(initialDistances);	
-				getShortestDistance(initialDistances, isMarked);
+				int[][] shortDistance = getShortestDistance(initialDistances, isMarked);
 				
+				int row = shortDistance[0];
+				int column = shortDistance[1];
+				
+				if(row > column) { 
+					Cluster c1;
+					for(int i = 0; i < clusters.size(); i++){
+						c1 = clusters.get(i);
+						
+						if(c1.checkIfNodeExists(row)){
+							break;
+						}
+					}
+					
+					Cluster c2; 
+					for(int j = 0; j < clusters.size(); j++){
+						c2 = clusters.get(j);
+						
+						if(c2.checkIfNodeExists(column))
+							break;
+					}
+					
+					c2.merge(c1);
+					
+					clusters.remove(c1);
+				}
+				else{
+					Cluster c1;
+					for(int i = 0; i < clusters.size(); i++){
+						c1 = clusters.get(i);
+						
+						if(c1.checkIfNodeExists(row)){
+							break;
+						}
+					}
+					
+					Cluster c2; 
+					for(int j = 0; j < clusters.size(); j++){
+						c2 = clusters.get(j);
+						
+						if(c2.checkIfNodeExists(column))
+							break;
+					}
+					
+					c1.merge(c2);
+					clusters.remove(c2);
+				}
 				printBool(isMarked);
 				
 			} else {
