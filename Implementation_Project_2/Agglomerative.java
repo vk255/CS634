@@ -28,17 +28,18 @@ class Node{
 		this.z = -1;
 	}
 
-    	/*
-     	 * Set the x y and z values
-     	 */
+    
+    /*
+     * Set the x y and z values
+     */
 
-    	private void setX(int x) { this.x = x; }
-    	private void setY(int y) { this.y = y; }
-    	private void setZ(int z) { this.z = z; }
+   	private void setX(int x) { this.x = x; }
+   	private void setY(int y) { this.y = y; }
+   	private void setZ(int z) { this.z = z; }
 
-    	/*
-     	 * Get the x y and z values
-     	 */
+   	/*
+   	 * Get the x y and z values
+   	 */
 
 	public int getX() { return x; }
 	public int getY() { return y; }
@@ -60,7 +61,9 @@ class Node{
 
 class Cluster {
 
-	public Node[] list;
+    public static final String NEWLINE = System.getProperty("line.separator");
+
+    public Node[] list;
 
 	public Cluster(Node... n){
 
@@ -94,25 +97,58 @@ class Cluster {
 
 	}
 
-	public static Cluster merge(Cluster a, Cluster b){
-	
-		int sizeA = a.getSize();
-		int sizeB = b.getSize();
-	
-		int sizeOfTemp = sizeA + sizeB;
+    public double[] getCenter(){
+       
+        double sumX, sumY;
 
-		Node array[] = new Node[sizeOfTemp];
+        double[] temp = null;
+        
+        int size = this.getSize();
 
-		int i, j;
+        if(list[0].is3D()){
+       
+            double sumZ;
 
-		for(i = 0; i < sizeA; i++)
-			array[i] = a.list[i];
+            sumX = 0.0;
+            sumY = 0.0;
+            sumZ = 0.0;
+        
+            for(int i = 0; i < size; i++)
+            {
+                sumX = sumX + list[i].getX();        
+                sumY = sumY + list[i].getY();        
+                sumZ = sumZ + list[i].getZ();        
+            }
 
-		for(j = i, i = 0; j < sizeOfTemp; j++)
-			array[j] = b.list[i++];			
+            temp = new double[]{ 0, 0, 0 };
 
-		return new Cluster(array);
-	}
+            temp[0] = sumX / size;
+            temp[1] = sumY / size;
+            temp[2] = sumZ / size;
+            
+        }
+        else {
+            
+            sumX = 0.0;
+            sumY = 0.0;
+           
+            for(int i = 0; i < size; i++)
+            {
+                sumX = sumX + list[i].getX();        
+                sumY = sumY + list[i].getY();        
+            }
+
+            temp = new double[]{ 0, 0 };
+
+            temp[0] = sumX / size;
+            temp[1] = sumY / size;
+
+        }
+
+        return temp;
+
+    }
+
 	public boolean checkIfNodeExists(int index){
 		
 		for(Node n: list){
@@ -122,7 +158,8 @@ class Cluster {
 		
 		return false;
 	}
-	public int getSize(){ return list.length; } 
+	
+    public int getSize(){ return list.length; } 
 	
 	public String toString() {
 
@@ -133,11 +170,12 @@ class Cluster {
 		for(Node n: list) {
 		
 			if( (i+1) % 10 == 0)	
-				temp = temp + n.toString() + "\n";
+				temp = temp + n.toString() + NEWLINE;
 			else
 				temp = temp + n.toString() + " ";
 			i++;	
-		}
+		
+        }
 	
 		return temp;	
 	}
@@ -146,6 +184,7 @@ class Cluster {
 	
 public class Agglomerative {
 
+	public static LinkedList<Cluster> clusters; 
 
 	public static double[][] getDistances(int dim, Node[] array){
 
@@ -193,7 +232,7 @@ public class Agglomerative {
 			   (double[][] distances, 
 			   boolean[][] isMarked){
 		
-		double minimum = distances[0][1];
+		double minimum = 300000000000.0;
 		int row = 0, column = 1;
 
 		int size = distances.length;
@@ -219,6 +258,38 @@ public class Agglomerative {
 		return arr;
 	
 	}
+   
+    public static int[] getFarthestDistance
+			   (double[][] distances, 
+			   boolean[][] isMarked){
+		
+		double maximum = -1.0;
+		int row = 0, column = 1;
+
+		int size = distances.length;
+
+		for(int i = 0; i < size - 1; i++){
+	
+			for(int j = i + 1; j < size; j++){
+
+				if(distances[i][j] > maximum 
+					&& !(isMarked[i][j])){
+					maximum = distances[i][j];
+					row = i;
+					column = j;
+				}
+			}
+
+		}
+
+		isMarked[row][column] = true;
+		
+		int[] arr = { row, column };
+		
+		return arr;
+	
+	}
+
 
 	public static double round(double a){ 
 		return  (int)(a * 100)/100.0; 
@@ -230,6 +301,23 @@ public class Agglomerative {
 
 
 	}
+
+	public static Cluster getCluster(int ind){
+
+		Cluster tmp = null;
+
+		int size = clusters.size();
+		
+        for(int i = 0; i < size; i++){
+
+			tmp = clusters.get(i);
+			
+            if(tmp.checkIfNodeExists(ind))
+				break;
+		}
+
+		return tmp;
+	}
 	
 	public static void main(String[] args){
 
@@ -240,7 +328,7 @@ public class Agglomerative {
 
 		try{
 
-			LinkedList<Cluster> clusters = new LinkedList<Cluster>();
+			clusters = new LinkedList<Cluster>();
 			
 			List<Node> initialArr = new ArrayList<Node>();
 	
@@ -251,7 +339,8 @@ public class Agglomerative {
 			BufferedReader br = new BufferedReader(fs);
 
 			String line = null;
-		
+	        int ind = 0;	
+
 			while( (line = br.readLine()) != null){
 
 				String[] coordinates = line.split("\\s+");
@@ -267,7 +356,8 @@ public class Agglomerative {
 					int z = Integer.parseInt(coordinates[2]);	
 					n = new Node(x, y, z);
 				}
-	
+             
+                n.setIndex(ind++);	
 				initialArr.add(n);	
 			}
 
@@ -276,78 +366,70 @@ public class Agglomerative {
 			Node[] startArray = new Node[initialArr.size()];
 			boolean[][] isMarked = new boolean[startArray.length][startArray.length];
 
-			for(int i = 0; i < initialArr.size(); i++)
+			for(int i = 0; i < initialArr.size(); i++){
 				startArray[i] = initialArr.get(i);
+				clusters.add(new Cluster(startArray[i]));
+			}
 
 			initialArr.clear();
-				
+		
+            double[][] initialDistances = null;
+
 			if(temp.is3D()){
 				
-				// DO 3-Dimensional Node calculations
+				// Do 3-Dimensional Node Distance calculations
 				System.out.println("It is 3D");
-				double[][] initialDistances = getDistances(3, startArray);
-				
-				printDistance(initialDistances);	
-				int[][] shortDistance = getShortestDistance(initialDistances, isMarked);
-				
-				int row = shortDistance[0];
-				int column = shortDistance[1];
-				
-				if(row > column) { 
-					Cluster c1;
-					for(int i = 0; i < clusters.size(); i++){
-						c1 = clusters.get(i);
-						
-						if(c1.checkIfNodeExists(row)){
-							break;
-						}
-					}
-					
-					Cluster c2; 
-					for(int j = 0; j < clusters.size(); j++){
-						c2 = clusters.get(j);
-						
-						if(c2.checkIfNodeExists(column))
-							break;
-					}
-					
-					c2.merge(c1);
-					
-					clusters.remove(c1);
-				}
-				else{
-					Cluster c1;
-					for(int i = 0; i < clusters.size(); i++){
-						c1 = clusters.get(i);
-						
-						if(c1.checkIfNodeExists(row)){
-							break;
-						}
-					}
-					
-					Cluster c2; 
-					for(int j = 0; j < clusters.size(); j++){
-						c2 = clusters.get(j);
-						
-						if(c2.checkIfNodeExists(column))
-							break;
-					}
-					
-					c1.merge(c2);
-					clusters.remove(c2);
-				}
-				printBool(isMarked);
-				
+				initialDistances = getDistances(3, startArray);
+
 			} else {
 			
-				// DO 2-Dimensional Node calculations
+				// Do 2-Dimensional Node Distance calculations
 				System.out.println("It is 2D");
-				double[][] initialDistances = getDistances(2, startArray);
+				initialDistances = getDistances(2, startArray);
+			
+            } 
+		      
+                while(clusters.size() > 4){
 				
-				printDistance(initialDistances);	
-			}
+                    int[] shortDistance = getShortestDistance(initialDistances, isMarked);
+				
+				    int row = shortDistance[0];
+    				int column = shortDistance[1];
 		
+                    Cluster c1 = getCluster(row);
+		    		Cluster c2 = getCluster(column); 
+                   
+                    if(c1 == c2) {
+                        continue;
+                    }
+				
+                    if(row > column) { 
+                   
+                        if(c1 != c2){	
+                            c2.merge(c1);
+                            clusters.remove(c1);
+					    }
+				    }
+			    	else{
+			    		
+			    		if(c1 != c2){
+			    			c1.merge(c2);
+			    			clusters.remove(c2);
+			    		}	
+					
+				    }
+		        
+              }		
 
+              System.out.println("Cluster List:");
+
+              int i = 0;
+
+              for(Cluster c: clusters){
+              
+                    System.out.println("Cluster C" + i++);      
+                    System.out.println(c);
+              }
 		} catch(FileNotFoundException file){
 			System.err.println(file); 
 		} catch(IOException ex){
