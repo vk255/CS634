@@ -388,8 +388,14 @@ public class Agglomerative {
 				initialDistances = getDistances(2, startArray);
 			
             } 
-		      
-                while(clusters.size() > 4){
+		   
+            Scanner Scan = new Scanner(System.in);  
+            
+            System.out.print("Enter number of clusters K: ");
+            
+            int k = Scan.nextInt();
+
+                while(clusters.size() > k){
 				
                     int[] shortDistance = getShortestDistance(initialDistances, isMarked);
 				
@@ -398,26 +404,32 @@ public class Agglomerative {
 		
                     Cluster c1 = getCluster(row);
 		    		Cluster c2 = getCluster(column); 
-                   
+                  
+
+                    /*
+                     * The reason I am doing a shallow check
+                     * is because they will only end up pointing to
+                     * the same cluster
+                     * Because two clusters can't have the same nodes 
+                     * inside them
+                     */
+
                     if(c1 == c2) {
                         continue;
                     }
 				
-                    if(row > column) { 
+                    /*if(row > column) { 
                    
                         if(c1 != c2){	
                             c2.merge(c1);
                             clusters.remove(c1);
 					    }
 				    }
-			    	else{
-			    		
-			    		if(c1 != c2){
-			    			c1.merge(c2);
-			    			clusters.remove(c2);
-			    		}	
+			    	else{*/
+			    	c1.merge(c2);
+			    	clusters.remove(c2);
 					
-				    }
+				    //}
 		        
               }		
 
@@ -426,7 +438,6 @@ public class Agglomerative {
               int i = 0;
 
               for(Cluster c: clusters){
-              
                     System.out.println("Cluster C" + i++);      
                     System.out.println(c);
               }
