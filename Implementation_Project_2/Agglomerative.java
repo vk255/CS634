@@ -1,3 +1,12 @@
+/*
+ *
+ * Venkata Harish K Kajur
+ * Professor Wang
+ * CS 634-852
+ * April 5, 2014
+ *
+ */
+
 import java.util.*;
 import java.io.*;
 
@@ -418,18 +427,9 @@ public class Agglomerative {
                         continue;
                     }
 				
-                    /*if(row > column) { 
-                   
-                        if(c1 != c2){	
-                            c2.merge(c1);
-                            clusters.remove(c1);
-					    }
-				    }
-			    	else{*/
 			    	c1.merge(c2);
 			    	clusters.remove(c2);
 					
-				    //}
 		        
               }		
 
@@ -447,6 +447,14 @@ public class Agglomerative {
 			System.err.println("Error: IOException");
 		}
 	}
+    
+    /*
+     *
+     * Method printBool() takes a Two-Dimensional Array as argument
+     * The method goes through each element in the array 
+     * Prints the value inside them
+     *
+     */
 
 	public static void printBool(boolean[][] b){
 
